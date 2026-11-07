@@ -457,6 +457,68 @@ footer {
     100% { transform: scale(1); }
 }
 
+/* ========================================== */
+/* ESTILO DO BANNER DE COOKIES (LGPD)         */
+/* ========================================== */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #0d121b;
+    border-top: 1px solid #252b38;
+    color: #fff;
+    padding: 20px;
+    z-index: 99999;
+    box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.6);
+    display: none; /* Controlado via JS para aparecer se não aceito */
+    animation: slideUp 0.4s ease-out;
+}
+
+.cookie-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.cookie-content p {
+    font-size: 0.95rem;
+    color: #d1d5db;
+    line-height: 1.5;
+    flex: 1;
+    min-width: 280px;
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-cookie-accept {
+    background: #28c76f;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-cookie-accept:hover {
+    background: #23b363;
+    transform: translateY(-2px);
+}
+
+@keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+}
+
 /* Ajustes Mobile */
 @media (max-width: 768px) {
     .menu-mobile-btn {
@@ -526,5 +588,16 @@ footer {
 
     .footer-info {
         flex-direction: column;
+    }
+
+    /* Responsividade do Banner de Cookies no Mobile */
+    .cookie-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cookie-buttons {
+        width: 100%;
+        justify-content: center;
     }
 }
