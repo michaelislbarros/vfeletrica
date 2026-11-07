@@ -49,3 +49,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+// Lógica do Banner de Cookies LGPD
+document.addEventListener('DOMContentLoaded', () => {
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('accept-cookies');
+
+    // Verifica se o usuário já aceitou os cookies anteriormente
+    if (!localStorage.getItem('cookie_accepted')) {
+        setTimeout(() => {
+            cookieBanner.style.display = 'block';
+        }, 1000); // Mostra o banner após 1 segundo
+    }
+
+    if (acceptBtn) {
+        acceptBtn.addEventListener('click', () => {
+            localStorage.setItem('cookie_accepted', 'true');
+            cookieBanner.style.display = 'none';
+        });
+    }
+});
